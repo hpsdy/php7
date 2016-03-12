@@ -1,4 +1,6 @@
 <?php
+1211
+2
 class My extends Thread {
     public function run() {
         var_dump($this->lock());
