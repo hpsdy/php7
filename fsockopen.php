@@ -14,7 +14,7 @@ function fopen_m($url)
 		echo "$errstr ($errno)<br />\n";
 	} else {
 		$http = "GET /save.php  / HTTP/1.1\r\n";
-		$http .= "Host: www.example.com\r\n";
+		$http .= "Host: $url\r\n";
 		$http .= "Connection: Close\r\n\r\n";
 		fwrite($fp,$http);
 		fclose($fp);
@@ -22,8 +22,8 @@ function fopen_m($url)
 }
 echo date('Y-m-d H:i:s');
 echo "\n";
-for($i=0;$i<100;$i++){
-	fopen_m('www.example.com');
-}
+//for($i=0;$i<10;$i++){
+	fopen_m('http://www.qinhan.com/');
+//}
 echo date('Y-m-d H:i:s');
 ?>
