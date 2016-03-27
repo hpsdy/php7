@@ -11,4 +11,5 @@ class My extends Thread {
 }
 $my = new My();
 $my->start();
+hello world
 ?>
