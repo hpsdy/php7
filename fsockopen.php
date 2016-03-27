@@ -19,6 +19,7 @@ function fopen_m($url)
 			$rel = fread($fp,10000000);
 			preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
 			$content = substr($rel,-$matches[1]);
+			$content = strip_tags($content);
 			file_put_contents('./msg',$content,FILE_APPEND);
 		//}
 		fclose($fp);
