@@ -11,10 +11,10 @@ function fopen_m($url)
 	if (!$fp) {
 		echo "$errstr ($errno)<br />\n";
 	} else {
-		$out = "GET / HTTP/1.1\r\n";
+		/*$out = "GET / HTTP/1.1\r\n";
 		$out .= "Host: $url\r\n";
 		$out .= "Connection: Close\r\n\r\n";
-		fwrite($fp, $out);
+		fwrite($fp, $out);*/
 		while (!feof($fp)) {
 			$rel = fgetss($fp, 128);
 			file_put_contents('./msg',$rel,FILE_APPEND);
