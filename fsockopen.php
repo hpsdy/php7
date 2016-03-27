@@ -5,6 +5,7 @@
  * Date: 2016/3/27
  * Time: 11:14
  */
+error_reporting(0);
 function fopen_m($url)
 {
 	$fp = fsockopen($url, 80, $errno, $errstr, 30);
