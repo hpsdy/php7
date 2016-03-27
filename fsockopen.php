@@ -8,6 +8,7 @@
 function fopen_m($url)
 {
 	$fp = fsockopen($url, 80, $errno, $errstr, 30);
+	stream_set_blocking($fp,0);
 	if (!$fp) {
 		echo "$errstr ($errno)<br />\n";
 	} else {
