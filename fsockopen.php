@@ -23,7 +23,7 @@ function fopen_m($url)
 	}
 }
 
-for($i=0;$i<1000;$i++){
+for($i=0;$i<10;$i++){
 	fopen_m('www.example.com');
 }
 ?>
