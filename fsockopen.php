@@ -15,6 +15,7 @@ function fopen_m($url)
 		$out .= "Host: $url\n";
 		$out .= "Connection: Close\n\n";
 		fwrite($fp, $out);
+		while (!feof($fp)){
 			$rel = fgetss($fp,1000);
 			//preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
 			//var_dump($matches);
