@@ -23,7 +23,7 @@ function fopen_m($url)
 echo date('Y-m-d H:i:s');
 echo "\n";
 //for($i=0;$i<10;$i++){
-	fopen_m('www.qinhan.com/');
+	fopen_m('192.168.88.133');
 //}
 echo date('Y-m-d H:i:s');
 ?>
