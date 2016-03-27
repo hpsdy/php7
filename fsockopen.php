@@ -13,17 +13,10 @@ function fopen_m($url)
 	if (!$fp) {
 		echo "$errstr ($errno)<br />\n";
 	} else {
-		$out = "GET / HTTP/1.1\n";
-		$out .= "Host: $url\n";
-		$out .= "Connection: Close\n\n";
-		fwrite($fp, $out);
-		//while (!feof($fp)){
-			$rel = fread($fp,10000000);
-			preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
-			$content = substr($rel,-$matches[1]);
-			$content = strip_tags($content);
-			file_put_contents('./msg',$content,FILE_APPEND);
-		//}
+		$http = "GET /save.php  / HTTP/1.1\r\n";
+		$http .= "Host: www.example.com\r\n";
+		$http .= "Connection: Close\r\n\r\n";
+		fwrite($fp,$http);
 		fclose($fp);
 	}
 }
