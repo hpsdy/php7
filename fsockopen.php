@@ -15,12 +15,12 @@ function fopen_m($url)
 		$out .= "Host: $url\n";
 		$out .= "Connection: Close\n\n";
 		fwrite($fp, $out);
-		while (!feof($fp)){
-			$rel = fgetss($fp,1000);
-			//preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
-			//var_dump($matches);
-			file_put_contents('./msg',$rel,FILE_APPEND);
-		}
+		//while (!feof($fp)){
+			$rel = fread($fp,10000000);
+			preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
+			$content = substr($rel,-$matches[1]);
+			file_put_contents('./msg',$content,FILE_APPEND);
+		//}
 		fclose($fp);
 	}
 }
