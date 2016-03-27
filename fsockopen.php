@@ -15,6 +15,7 @@ function fopen_m($url)
 		$out .= "Host: $url\r\n";
 		$out .= "Connection: Close\r\n\r\n";
 		fwrite($fp, $out);
+		var_dump(filesize($fp));
 		while (!feof($fp)) {
 			$rel = fread($fp,100000);
 			preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
