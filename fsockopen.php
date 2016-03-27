@@ -26,7 +26,8 @@ function fopen_m($url)
 	}
 }
 echo date('Y-m-d H:i:s');
-for($i=0;$i<2;$i++){
+echo "\n";
+for($i=0;$i<100;$i++){
 	fopen_m('www.example.com');
 }
 echo date('Y-m-d H:i:s');
