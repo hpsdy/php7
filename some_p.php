@@ -62,7 +62,7 @@ class test_thread_run extends Thread
 
   for($i = 0; $i < 100; $i++)
   {
-          $urls_array[] = array("name" => "baidu", "url" => "http://www.baidu.com/s?wd=" . mt_rand(10000, 20000));
+          $urls_array[] = array("name" => "baidu", "url" => "http://www.qinhan.com/save.php?num=" . mt_rand(0, 20));
   }
 
   $t = microtime(true);
