@@ -16,7 +16,7 @@ function fopen_m($url)
 		$out .= "Connection: Close\r\n\r\n";
 		fwrite($fp, $out);
 		while (!feof($fp)) {
-			$rel = fgetss($fp, 128);
+			$rel = fread($fp);
 			preg_match("/Content-Length:.?(\d+)/", $rel, $matches);
 			var_dump($matches);
 			//file_put_contents('./msg',$rel,FILE_APPEND);
