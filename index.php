@@ -9,4 +9,4 @@ var_dump((false>=0));
 
 echo "\n";
 
-var_dump((is_numeric(false)));
+var_dump((is_numeric(12.5)));
